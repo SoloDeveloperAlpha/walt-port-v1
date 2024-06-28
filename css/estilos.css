@@ -1,0 +1,745 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+/*H1 - font-size: 45px 2.8em Titulo
+H2 - font-size: 32px 1.99em sub-titulo
+H3 - font-size: 23px 1.41em sub-tit_parte-cont
+p - font-size: 16px; 1em parrafo
+a - font-size: 16px; 1em enlaces
+small - font-size: 11px; 0.7em letra pequeña
+footer - footer-size:11px; 0.7em letra pequeña(solo en determinados casos)*/
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --H1F:3.5em;
+  --H2F:2.8em;
+  --H3F:1.99em;
+  --H4F:1.21em;
+  --p_arF:1em;
+  --sml_fotF:0.7em;
+  --ColPRI:#ffd60a;
+  --ColPRI_A1:#876e00;
+  --ColPRI_B2:#ffdc30;
+  --ColSEC:#0a33ff;
+  --ColSEC_A1:##00008e;
+  --ColSEC_B2:#4942ff;
+
+  --TINTE_F:#222222;
+  --TINTE_S:#EEEEEE;
+}
+
+::selection {
+  background-color: var(--ColSEC_B2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--ColPRI);
+}
+
+h1, h2, h3, h4, p, a, span, small, footer {
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-size: var(--H1F);
+}
+
+h2 {
+  font-size: var(--H2F);
+}
+
+h3 {
+  font-size: var(--H3F);
+}
+
+h4 {
+  font-size: var(--H4F);
+  font-weight: bold;
+}
+
+p, a, span {
+  font-size: var(--p_arF);
+}
+
+small, footer {
+  font-size: var(--sml_fotF);
+}
+
+main {
+  width: 100%;
+  height: auto;
+  background: linear-gradient(90deg, var(--ColPRI), var(--ColPRI));
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "luna luna luna luna luna" "head head sec sec sec";
+}
+main .vista {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  grid-area: luna;
+}
+main .vista #view {
+  padding: 1em;
+  font-size: 1.5em;
+  color: var(--TINTE_F);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: 0.3s ease-in-out;
+  
+}
+main .cabecera {
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  margin: 5em 0;
+  gap: 3.5em;
+  grid-area: head;
+  color: var(--TINTE_F);
+}
+main .cabecera .cont1-hed {
+  width: 100%;
+  max-width: 458px;
+  max-height: 206px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+main .cabecera .cont1-hed > h3 {
+  font-weight: 400;
+}
+main .cabecera .cont1-hed > p {
+  text-wrap: balance;
+  line-height: 1.4em;
+  color: var(--TINTE_F);
+}
+main .cabecera > nav {
+  width: 100%;
+  max-width: 458px;
+  max-height: 287px;
+}
+main .cabecera > nav > ul {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+main .cabecera > nav > ul > li {
+  width: 100%;
+  list-style: none;
+}
+main .cabecera > nav > ul > li > a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: var(--TINTE_F);
+  bottom: -6px;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+}
+main .cabecera > nav > ul > li > a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+main .cabecera > nav > ul > li > a {
+  position: relative;
+  width: 200px;
+  text-decoration: none;
+  color: var(--TINTE_F);
+  transform: translateX(0px);
+  transition: transform, color 0.2s ease-in-out;
+}
+main .cabecera > nav > ul > li > a:hover {
+  transform: translateX(48px);
+  color: var(--TINTE_F);
+}
+main .cabecera .social {
+  width: 100%;
+  max-width: 458px;
+}
+main .cabecera .social > ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5em;
+}
+main .cabecera .social > ul > li {
+  list-style: none;
+  width: 2.5em;
+  height: 2.5em;
+  background-color: none;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+main .cabecera .social >ul >li:hover{
+  background-color: var(--TINTE_F);
+  box-shadow: 2px 2px 0px var(--ColSEC);
+}
+main .cabecera .social > ul > li > a {
+  text-decoration: none;
+}
+main .cabecera .social > ul > li > a > i {
+  color: var(--TINTE_F);
+  font-size: 1.7em;
+}
+main .cabecera .social >ul >li:hover > a > i{
+  color: var(--TINTE_S);
+}
+
+main .sec-princ {
+  width: auto;
+  height: 100%;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  grid-area: sec;
+  color: var(--TINTE_F);
+  /*.hab2*/
+  /*====================================*/
+}
+main .sec-princ .fantas {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+main .sec-princ .fantas #etq_fants {
+  display: none;
+}
+main .sec-princ .sobre-mi .cont-sobre-mi {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-wrap: balance;
+  line-height: 1.4em;
+  padding: 5em 0;
+  gap: 1.5em;
+}
+main .sec-princ .sobre-mi .cont-sobre-mi #parrf1, main .sec-princ .sobre-mi .cont-sobre-mi #parrf2, main .sec-princ .sobre-mi .cont-sobre-mi #parrf3 {
+  width: 475px;
+  max-width: 475px;
+}
+main .sec-princ .sobre-mi .cont-sobre-mi #parrf1 > a, main .sec-princ .sobre-mi .cont-sobre-mi #parrf2 > a, main .sec-princ .sobre-mi .cont-sobre-mi #parrf3 > a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--TINTE_F);
+  cursor: url("../images/gym.png") 16 16, auto;
+}
+main .sec-princ .sobre-mi .cont-sobre-mi #parrf1 > span, main .sec-princ .sobre-mi .cont-sobre-mi #parrf2 > span, main .sec-princ .sobre-mi .cont-sobre-mi #parrf3 > span {
+  font-weight: bolder;
+  color: var(--TINTE_F);
+}
+main .sec-princ .habilidades {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 5em;
+}
+main .sec-princ .habilidades .hab1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+}
+main .sec-princ .habilidades .hab1 .dat-hab {
+  width: 100%;
+  max-width: 475px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+main .sec-princ .habilidades .hab1 .dat-hab .nivel {
+  width: 100%;
+  max-width: 15em;
+  height: 0.8em;
+  background-color: var(--TINTE_F);
+  border-radius: 1em;
+  box-shadow: inset 1px 1px 1px var(--TINTE_F);
+}
+
+main .sec-princ .habilidades .hab2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding-top: 3em;
+}
+main .sec-princ .habilidades .hab2 .cont-hab2 {
+  width: 475px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: start;
+  padding-right: 5em;
+  gap: 0.4em;
+}
+main .sec-princ .skill {
+  width: auto;
+  height: auto;
+  padding: 5px 10px;
+  background-color: var(--TINTE_F);
+  border-radius: 1em;
+  box-shadow: 2px 2px 0px var(--ColSEC);
+}
+main .sec-princ .skill > span {
+  color: var(--TINTE_S) !important;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8em;
+}
+main .sec-princ .proy {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding-top: 5em;
+  margin-top: 1em;
+  margin-bottom: 5em;
+  gap: 2em;
+}
+main .sec-princ .proy > a {
+  color: currentColor;
+  text-decoration: none;
+}
+main .sec-princ .proy > a .tarjeta-proy {
+  width: 475px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+  transition: 0.2s ease-in-out;
+}
+main .sec-princ .proy > a .tarjeta-proy #fech-proy {
+  width: 13em;
+  font-size: 0.9em;
+  color: var(--TINTE_F);
+}
+main .sec-princ .proy > a .tarjeta-proy:hover #fech-proy {
+  color: var(--TINTE_S);
+}
+main .sec-princ .proy > a .tarjeta-proy .type-proy {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 0.5em;
+}
+main .sec-princ .proy > a .tarjeta-proy:hover {
+  background-color: var(--TINTE_F);
+  border-radius: 0.5em;
+  box-shadow: 6px 6px 0px var(--ColSEC_B2);
+  cursor: pointer;
+  color: var(--TINTE_S);
+}
+main .sec-princ .proy > a .tarjeta-proy .type-proy > h4 {
+  font-weight: 500;
+}
+main .sec-princ .proy > a .tarjeta-proy:hover .type-proy > h4 {
+  color: var(--ColPRI);
+}
+main .sec-princ .proy > a .tarjeta-proy .type-proy > h4 > i {
+  font-size: 0.5em;
+  transform: rotate(45deg);
+}
+main .sec-princ .proy > a .tarjeta-proy:hover .type-proy > h4 > i {
+  transform: rotate(45deg) translateY(-5px);
+}
+
+main .sec-princ .proy > a .tarjeta-proy .type-proy > p {
+  font-size: 0.9em;
+  font-weight: lighter;
+  min-width: 40ch;
+}
+main .sec-princ .proy > a .tarjeta-proy .type-proy .tools {
+  padding: 0.5em 0;
+}
+main .sec-princ .proy > a .tarjeta-proy .type-proy .tools > img {
+  width: 12em;
+  height: auto;
+  border-radius: 5px;
+}
+main .sec-princ .proy > a .tarjeta-proy .type-proy .proy-skills {
+  width: 100%;
+  display: flex;
+  gap: 0.4em;
+}
+main .sec-princ .proy > a .tarjeta-proy:hover .type-proy .proy-skills .skill {
+  background-color: var(--TINTE_S);
+  box-shadow: 2px 2px 0px var(--ColSEC_B2);
+}
+main .sec-princ .proy > a .tarjeta-proy:hover .type-proy .proy-skills .skill > span {
+  color: var(--TINTE_F) !important;
+}
+
+main .sec-princ .cert {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding: 2em 0;
+}
+main .sec-princ .cert > a {
+  text-decoration: none;
+  color: #EEEEEE;
+}
+main .sec-princ .cert > a > h4 {
+  font-family: var(--H4F);
+  font-weight: 500;
+}
+
+footer {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  margin: 1em 4em 1em 0;
+}
+footer > img {
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  main {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "luna luna luna luna" "head head head head" "sec  sec  sec  sec";
+  }
+  main .vista {
+    grid-area: luna;
+  }
+  main .cabecera {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding-left: 3em;
+    grid-area: head;
+  }
+  main .cabecera > nav {
+    display: none;
+  }
+  main .sec-princ {
+    width: 100%;
+    grid-area: sec;
+    justify-content: start;
+    align-items: start;
+  }
+  main .sec-princ .sobre-mi .cont-sobre-mi {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-wrap: balance;
+    padding-top: 5em;
+    padding-left: 3em;
+    padding-right: 3em;
+    gap: 1.5em;
+  }
+  main .sec-princ .sobre-mi .cont-sobre-mi #parrf1, main .sec-princ .sobre-mi .cont-sobre-mi #parrf2, main .sec-princ .sobre-mi .cont-sobre-mi #parrf3 {
+    width: 100%;
+    height: auto;
+  }
+  main .sec-princ .sobre-mi .cont-sobre-mi #parrf1 > a, main .sec-princ .sobre-mi .cont-sobre-mi #parrf2 > a, main .sec-princ .sobre-mi .cont-sobre-mi #parrf3 > a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--TINTE_F);
+    cursor: url("../images/gym.png") 16 16, auto;
+  }
+  main .sec-princ .sobre-mi .cont-sobre-mi #parrf1 > span, main .sec-princ .sobre-mi .cont-sobre-mi #parrf2 > span, main .sec-princ .sobre-mi .cont-sobre-mi #parrf3 > span {
+    font-weight: 500;
+    color: var(--TINTE_F);
+  }
+  main .sec-princ .habilidades {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7em;
+    padding-left: 3em;
+    padding-right: 3em;
+    gap: 1.5em;
+  }
+  main .sec-princ .habilidades .hab1 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    gap: 1.5em;
+  }
+  main .sec-princ .habilidades .hab2 {
+    width: 50%;
+  }
+  main .sec-princ .proy {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: 7em;
+    padding-left: 3em;
+    padding-right: 3em;
+    margin-top: 1em;
+    gap: 2em;
+  }
+  main .sec-princ .proy > a {
+    color: currentColor;
+    text-decoration: none;
+  }
+  main .sec-princ .proy > a .tarjeta-proy {
+    width: 475px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    transition: 0.2s ease-in-out;
+  }
+  main .sec-princ .proy > a .tarjeta-proy #fech-proy {
+    width: 13em;
+    font-size: 0.9em;
+    color: var(--TINTE_F);
+  }
+  main .sec-princ .proy > a .tarjeta-proy .type-proy {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0.5em;
+  }
+  main .sec-princ .proy > a .tarjeta-proy .type-proy > h4 {
+    font-weight: 500;
+  }
+  main .sec-princ .proy > a .tarjeta-proy .type-proy > h4 > i {
+    font-size: 0.5em;
+    transform: rotate(45deg);
+  }
+  main .sec-princ .proy > a .tarjeta-proy .type-proy > p {
+    font-size: 0.9em;
+    font-weight: lighter;
+  }
+  main .sec-princ .proy > a .tarjeta-proy .type-proy .proy-skills {
+    width: 100%;
+    display: flex;
+    gap: 0.4em;
+  }
+  main .sec-princ .proy > a .tarjeta-proy:hover {
+    background-color: var(--TINTE_F);
+    border-radius: 0.5em;
+    box-shadow: 6px 6px 0px var(--ColSEC_B2);
+    cursor: pointer;
+    color: var(--TINTE_S);
+  }
+}
+@media screen and (max-width: 767px) {
+  main {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "luna luna" "head head" "sec  sec ";
+  }
+  main .vista {
+    grid-area: luna;
+  }
+  main .cabecera {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    grid-area: head;
+    padding: 0 1em;
+  }
+  main .cabecera > nav {
+    display: none;
+  }
+  main .sec-princ {
+    width: 100%;
+    grid-area: sec;
+    justify-content: start;
+    align-items: start;
+  }
+  main .sec-princ .sobre-mi .cont-sobre-mi {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-wrap: balance;
+    padding-top: 5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    gap: 1.5em;
+  }
+  main .sec-princ .sobre-mi .cont-sobre-mi #parrf1, main .sec-princ .sobre-mi .cont-sobre-mi #parrf2, main .sec-princ .sobre-mi .cont-sobre-mi #parrf3 {
+    width: 100%;
+    height: auto;
+  }
+  main .sec-princ .sobre-mi .cont-sobre-mi #parrf1 > a, main .sec-princ .sobre-mi .cont-sobre-mi #parrf2 > a, main .sec-princ .sobre-mi .cont-sobre-mi #parrf3 > a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--TINTE_F);
+    cursor: url("../images/gym.png") 16 16, auto;
+  }
+  main .sec-princ .sobre-mi .cont-sobre-mi #parrf1 > span, main .sec-princ .sobre-mi .cont-sobre-mi #parrf2 > span, main .sec-princ .sobre-mi .cont-sobre-mi #parrf3 > span {
+    font-weight: 500;
+    color: var(--TINTE_F);
+  }
+  main .sec-princ .habilidades {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding-top: 7em;
+    padding-left: 1em;
+    padding-right: 1em;
+    gap: 1.5em;
+  }
+  main .sec-princ .habilidades .hab1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding-top: 0;
+    gap: 1.5em;
+  }
+  main .sec-princ .habilidades .hab2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+  main .sec-princ .habilidades .hab2 .cont-hab2 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0;
+  }
+  main .sec-princ .proy {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: 7em;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: 1em;
+    gap: 2em;
+  }
+  main .sec-princ .proy > a {
+    width: 100%;
+    color: currentColor;
+    text-decoration: none;
+  }
+  main .sec-princ .proy > a .tarjeta-proy {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s ease-in-out;
+    padding: 1em;
+  }
+  main .sec-princ .proy > a .tarjeta-proy #fech-proy {
+    width: 13em;
+    font-size: 0.9em;
+    color: var(--TINTE_F);
+  }
+  main .sec-princ .proy > a .tarjeta-proy .type-proy {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0.5em;
+  }
+  main .sec-princ .proy > a .tarjeta-proy .type-proy > h4 {
+    font-weight: 500;
+  }
+  main .sec-princ .proy > a .tarjeta-proy .type-proy > h4 > i {
+    font-size: 0.5em;
+    transform: rotate(45deg);
+  }
+  main .sec-princ .proy > a .tarjeta-proy .type-proy > p {
+    font-size: 0.9em;
+    font-weight: lighter;
+  }
+  main .sec-princ .proy > a .tarjeta-proy .type-proy .proy-skills {
+    width: 100%;
+    display: flex;
+    gap: 0.4em;
+  }
+  main .sec-princ .proy > a .tarjeta-proy:hover {
+    background-color: var(--TINTE_F);
+    border-radius: 0.5em;
+    box-shadow: 6px 6px 0px var(--ColSEC_B2);
+    cursor: pointer;
+    color: var(--TINTE_S);
+  }
+  main .sec-princ .proy > a .tarjeta-proy:hover h4 > i {
+    transform: rotate(45deg) translateY(-5px);
+  }
+}
+
+/*# sourceMappingURL=estilos.css.map */
